@@ -1,0 +1,112 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color:dimgrey;
+    background-image:url(img/09.jpg);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.tarefadone{
+    background-color:brown;
+}
+
+.marginleft0{
+    margin-left:2%;
+}
+.fundologinmenu
+{
+    border-color:coral;
+    border-width:1px;
+    border-style:solid;
+    padding:5%;
+    background-color:black;
+    border-radius:5px;
+}
+
+.apenasborda {
+    border-color: coral;
+    border-width: 1px;
+    border-style: solid;
+}
+a.createUser {
+    background-image: url(img/03.jpg);
+    background-attachment: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 496px 305px;
+    display: block;
+    width: 500px;
+    height: 300px;
+}
+a.createTask {
+    background-image: url(img/09.jpg);
+    background-attachment: initial;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 496px 305px;
+    display: block;
+    width: 500px;
+    height: 300px;
+}
+
+.mtlight0 {
+    margin-top: 1%;
+}
+.marginleft0{
+    margin-left:4%;
+}
+.mtlight1{
+    
+   margin-top: 2%;
+}
+.mt0 {
+    margin-top: 10%;
+}
+.mt1 {
+    margin-top: 20%;
+}
+
+.fundotabelatarefas {
+    border-color: coral;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    background-color:white;
+}
+.fundopretologin {
+    border-color: coral;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    background-color: black;
+}
+.fundopreto{
+   
+    border-radius:5px;
+}
+.colorintro{
+    color:coral;
+    text-align:center;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}

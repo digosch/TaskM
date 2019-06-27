@@ -1,0 +1,63 @@
+﻿@using TaskM.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "";
+}
+
+<div class="jumbotron fundopretologin mt0">
+    <h3 class="colorintro text-center">Efetuar Login</h3>
+</div>
+
+<h2>@ViewBag.Title.</h2>
+<div class="row fundologinmenu">
+    <div class="col-md-7 ">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken()
+                <h4 class="colorintro">Usar uma conta local para efetuar login.</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group" >
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label colorintro" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label colorintro" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-1 col-md-10">
+                        <div class="checkbox colorintro">
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-5 col-md-10">
+                        <input type="submit" value="Efetuar login" class="btn btn-primary colorintro" />
+                    </div>
+                </div>
+                
+                @* Ativar isso assim que você tiver a confirmação de conta ativada para a funcionalidade de redefinição de senha
+                    <p>
+                        @Html.ActionLink("Esqueceu sua senha?", "ForgotPassword")
+                    </p>*@
+            }
+        </section>
+    </div>
+    <div class="col-md-4">
+        <img class="img-rounded img-responsive" width="850" height="500" src="~/Content/img/08.jpg">
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<TaskM.Models.Tarefa>
+
+@{
+    ViewBag.Title = "Gerenciador de Tarefas";
+}
+
+<div class="jumbotron fundopretologin mt0">
+    <h3 class="colorintro text-center">@ViewBag.Title.</h3>
+</div>
+
+<p>
+    @Html.ActionLink("Adicionar Tarefa", "Create", new {  }, new { @class = "btn btn-success" })
+</p>
+<table class="fundotabelatarefas table table-responsive">
+    <tr>
+        <th class="">
+            @Html.DisplayNameFor(model => model.NomeTarefa)
+        </th>
+        <th class=" text-center">
+           <p>Tarefa Concluída ?</p>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr onclick="clicartarefa()" id="tarefaclicada">
+        <td class=" " >
+            @Html.DisplayFor(modelItem => item.NomeTarefa)
+        </td>
+        <td class="text-center"   onclick="clicartarefa()">
+            @Html.CheckBoxFor(modelItem => item.TaskConcluida , htmlAttributes: new {   id = "tarefaclicada", @class = " text-center marginleft0  " })
+        </td>
+        <td>
+            @Html.ActionLink("Editar Tarefa", "Edit", new { id = item.IdTarefa }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Deletar", "Delete", new { id = item.IdTarefa }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>
+
+<script  language="javascript" type="text/javascript">
+
+    document.getElementById(item.IdTarefa).addEventListener("click", clicartarefa);
+
+    function clicartarefa() {
+
+    //var tarefaclicada = item.IdTarefa;
+        document.getElementById("tarefaclicada").disabled = true;
+        document.getElementById("tarefaclicada").className = "tarefadone";
+        
+    }
+</script>

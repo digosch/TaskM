@@ -1,0 +1,54 @@
+﻿@model TaskM.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Task Manager";
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+
+
+
+
+<div class=" fundopreto mt1">
+    <h2 class="colorintro">TASK MANAGER - Gerenciador de Tarefa</h2>
+
+</div>
+
+<div class="row">
+
+    <div class="form-horizontal">
+
+        @if (User.IsInRole("User") || User.IsInRole("Admin"))
+        {
+            <div class="fundopretologin">
+                <h4 class="colorintro">Escolha sua Atividade</h4>
+            </div>
+        }
+
+        <div class="row marginleft0" >
+        @if (User.IsInRole("Admin"))
+        {
+            <div class="form-group mtlight1 col-lg-6 ">
+                @Html.ActionLink("Registre-se", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "createUser img-rounded img-responsive apenasborda marginleft0" })
+                <div class="fundopretologin mtlight0 ">
+                    <h4 class="colorintro">Criar Usuário</h4>
+                </div>
+            </div>
+        }
+        @if (User.IsInRole("User") || User.IsInRole("Admin"))
+        {
+            <div class="form-group mtlight1 col-lg-6">
+                @Html.ActionLink("Tarefas", "Index", "Tarefas", new { area = "Tarefas" }, htmlAttributes: new { id = "registerLink", @class = "createTask img-rounded img-responsive apenasborda marginleft0" })
+                <div class="fundopretologin mtlight0">
+                    <h4 class="colorintro">Gerenciar Tarefas</h4>
+                </div>
+            </div>
+        }
+        </div>
+
+
+
+
+
+            </div>
+
+        </div>
